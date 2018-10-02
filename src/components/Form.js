@@ -47,7 +47,7 @@ let
                         <option value="path" type="string">File Path</option>
                     </select>
                 </form>
-                { value === "string" ? (<FormValueReturn handleTypeChange={this.handleTypeChange} />) : (<NumberValueReturn />) } 
+                { value === "string" ? (<FormValueReturn />) : (<NumberValueReturn />) } 
             </section>
         </div>
         )
