@@ -1,12 +1,13 @@
 import React, {Component} from 'react'
 import FormValueReturn from './FormValueReturn.js'
 import NumberValueReturn from './NumberValueRetun.js'
+import '../styles/app.css'
 
 class Form extends Component{
     constructor(props){
         super(props)
         this.state={
-            selectionValue:""
+            selectionValue:"string"
         }
 
     }
@@ -29,8 +30,8 @@ let
         console.log(this.state)
         let value = this.state.selectionValue
         return(
-                <div className="array-container">
-            <section>
+        <div>
+            <section className="array-container">
                 <button>-</button>
                 <form className="event-form" id="form-0">
                     <select className="event-select" id="form-selection-0" onChange={this.handleTypeChange}>
@@ -46,20 +47,7 @@ let
                         <option value="path" type="string">File Path</option>
                     </select>
                 </form>
-                <form id="form-1">
-                    <select>
-                        <option value="starts_with">Starts With</option>
-                        <option value="does_not_start_with">Does Not Start With</option>
-                        <option value="equals">Equals</option>
-                        <option value="does_not_equal">Does Not Equal</option>
-                        <option value="contains">Contains</option>
-                        <option value="does_not_contain">Does Not Contain</option>
-                        <option value="in_list">In List</option>
-                        <option value="not_in_list">Not In List</option>
-                        <option value="contains_all">Contains All</option>
-                    </select>
-                </form>
-                { value == "string" ? (<FormValueReturn handleTypeChange={this.handleTypeChange} />) : (<NumberValueReturn />) } 
+                { value === "string" ? (<FormValueReturn handleTypeChange={this.handleTypeChange} />) : (<NumberValueReturn />) } 
             </section>
         </div>
         )
